@@ -1,0 +1,412 @@
+<?php
+use CRM_Arsdist_ExtensionUtil as E;
+
+return [
+  [
+    'name' => 'CustomGroup_ARS_Contact_Attributes_Calculated_',
+    'entity' => 'CustomGroup',
+    'cleanup' => 'always',
+    'update' => 'always',
+    'params' => [
+      'version' => 4,
+      'values' => [
+        'name' => 'ARS_Contact_Attributes_Calculated_',
+        'title' => E::ts('ARS Contact Attributes (Calculated)'),
+        'weight' => 17,
+        'collapse_adv_display' => TRUE,
+        'created_date' => '2025-12-16 11:58:45',
+        'is_public' => FALSE,
+      ],
+      'match' => ['name'],
+    ],
+  ],
+  [
+    'name' => 'OptionGroup_ARS_Contact_Attributes_Calculated_Region_District',
+    'entity' => 'OptionGroup',
+    'cleanup' => 'always',
+    'update' => 'always',
+    'params' => [
+      'version' => 4,
+      'values' => [
+        'name' => 'ARS_Contact_Attributes_Calculated_Region_District',
+        'title' => E::ts('ARS Contact Attributes (Calculated) :: Region: District'),
+        'data_type' => 'String',
+        'is_reserved' => FALSE,
+        'option_value_fields' => ['name', 'label'],
+      ],
+      'match' => ['name'],
+    ],
+  ],
+  [
+    'name' => 'OptionGroup_ARS_Contact_Attributes_Calculated_Region_District_OptionValue_Northeast_Buckeye',
+    'entity' => 'OptionValue',
+    'cleanup' => 'always',
+    'update' => 'always',
+    'params' => [
+      'version' => 4,
+      'values' => [
+        'option_group_id.name' => 'ARS_Contact_Attributes_Calculated_Region_District',
+        'label' => E::ts('Northeast: Buckeye'),
+        'value' => 'BU',
+        'name' => 'Northeast_Buckeye',
+      ],
+      'match' => [
+        'option_group_id',
+        'name',
+        'value',
+      ],
+    ],
+  ],
+  [
+    'name' => 'OptionGroup_ARS_Contact_Attributes_Calculated_Region_District_OptionValue_Northeast_Great_Lakes',
+    'entity' => 'OptionValue',
+    'cleanup' => 'always',
+    'update' => 'always',
+    'params' => [
+      'version' => 4,
+      'values' => [
+        'option_group_id.name' => 'ARS_Contact_Attributes_Calculated_Region_District',
+        'label' => E::ts('Northeast: Great Lakes'),
+        'value' => 'GL',
+        'name' => 'Northeast_Great_Lakes',
+      ],
+      'match' => [
+        'option_group_id',
+        'name',
+        'value',
+      ],
+    ],
+  ],
+  [
+    'name' => 'OptionGroup_ARS_Contact_Attributes_Calculated_Region_District_OptionValue_Northeast_Illinois_indiana',
+    'entity' => 'OptionValue',
+    'cleanup' => 'always',
+    'update' => 'always',
+    'params' => [
+      'version' => 4,
+      'values' => [
+        'option_group_id.name' => 'ARS_Contact_Attributes_Calculated_Region_District',
+        'label' => E::ts('Northeast: Illinois-indiana'),
+        'value' => 'II',
+        'name' => 'Northeast_Illinois_indiana',
+      ],
+      'match' => [
+        'option_group_id',
+        'name',
+        'value',
+      ],
+    ],
+  ],
+  [
+    'name' => 'OptionGroup_ARS_Contact_Attributes_Calculated_Region_District_OptionValue_Northeast_New_York',
+    'entity' => 'OptionValue',
+    'cleanup' => 'always',
+    'update' => 'always',
+    'params' => [
+      'version' => 4,
+      'values' => [
+        'option_group_id.name' => 'ARS_Contact_Attributes_Calculated_Region_District',
+        'label' => E::ts('Northeast: New York'),
+        'value' => 'NY',
+        'name' => 'Northeast_New_York',
+      ],
+      'match' => [
+        'option_group_id',
+        'name',
+        'value',
+      ],
+    ],
+  ],
+  [
+    'name' => 'OptionGroup_ARS_Contact_Attributes_Calculated_Region_District_OptionValue_Northeast_North_Central',
+    'entity' => 'OptionValue',
+    'cleanup' => 'always',
+    'update' => 'always',
+    'params' => [
+      'version' => 4,
+      'values' => [
+        'option_group_id.name' => 'ARS_Contact_Attributes_Calculated_Region_District',
+        'label' => E::ts('Northeast: North Central'),
+        'value' => 'NC',
+        'name' => 'Northeast_North_Central',
+      ],
+      'match' => [
+        'option_group_id',
+        'name',
+        'value',
+      ],
+    ],
+  ],
+  [
+    'name' => 'OptionGroup_ARS_Contact_Attributes_Calculated_Region_District_OptionValue_Northeast_Penn_jersey',
+    'entity' => 'OptionValue',
+    'cleanup' => 'always',
+    'update' => 'always',
+    'params' => [
+      'version' => 4,
+      'values' => [
+        'option_group_id.name' => 'ARS_Contact_Attributes_Calculated_Region_District',
+        'label' => E::ts('Northeast: Penn-jersey'),
+        'value' => 'PJ',
+        'name' => 'Northeast_Penn_jersey',
+      ],
+      'match' => [
+        'option_group_id',
+        'name',
+        'value',
+      ],
+    ],
+  ],
+  [
+    'name' => 'OptionGroup_ARS_Contact_Attributes_Calculated_Region_District_OptionValue_Northeast_Yankee',
+    'entity' => 'OptionValue',
+    'cleanup' => 'always',
+    'update' => 'always',
+    'params' => [
+      'version' => 4,
+      'values' => [
+        'option_group_id.name' => 'ARS_Contact_Attributes_Calculated_Region_District',
+        'label' => E::ts('Northeast: Yankee'),
+        'value' => 'YA',
+        'name' => 'Northeast_Yankee',
+      ],
+      'match' => [
+        'option_group_id',
+        'name',
+        'value',
+      ],
+    ],
+  ],
+  [
+    'name' => 'OptionGroup_ARS_Contact_Attributes_Calculated_Region_District_OptionValue_Northwest_Central',
+    'entity' => 'OptionValue',
+    'cleanup' => 'always',
+    'update' => 'always',
+    'params' => [
+      'version' => 4,
+      'values' => [
+        'option_group_id.name' => 'ARS_Contact_Attributes_Calculated_Region_District',
+        'label' => E::ts('Northwest: Central'),
+        'value' => 'CE',
+        'name' => 'Northwest_Central',
+      ],
+      'match' => [
+        'option_group_id',
+        'name',
+        'value',
+      ],
+    ],
+  ],
+  [
+    'name' => 'OptionGroup_ARS_Contact_Attributes_Calculated_Region_District_OptionValue_Northwest_Pacific_Northwest',
+    'entity' => 'OptionValue',
+    'cleanup' => 'always',
+    'update' => 'always',
+    'params' => [
+      'version' => 4,
+      'values' => [
+        'option_group_id.name' => 'ARS_Contact_Attributes_Calculated_Region_District',
+        'label' => E::ts('Northwest: Pacific Northwest'),
+        'value' => 'PN',
+        'name' => 'Northwest_Pacific_Northwest',
+      ],
+      'match' => [
+        'option_group_id',
+        'name',
+        'value',
+      ],
+    ],
+  ],
+  [
+    'name' => 'OptionGroup_ARS_Contact_Attributes_Calculated_Region_District_OptionValue_Northwest_Rocky_Mountain',
+    'entity' => 'OptionValue',
+    'cleanup' => 'always',
+    'update' => 'always',
+    'params' => [
+      'version' => 4,
+      'values' => [
+        'option_group_id.name' => 'ARS_Contact_Attributes_Calculated_Region_District',
+        'label' => E::ts('Northwest:  Rocky Mountain'),
+        'value' => 'RM',
+        'name' => 'Northwest_Rocky_Mountain',
+      ],
+      'match' => [
+        'option_group_id',
+        'name',
+        'value',
+      ],
+    ],
+  ],
+  [
+    'name' => 'OptionGroup_ARS_Contact_Attributes_Calculated_Region_District_OptionValue_Southeast_Carolina',
+    'entity' => 'OptionValue',
+    'cleanup' => 'always',
+    'update' => 'always',
+    'params' => [
+      'version' => 4,
+      'values' => [
+        'option_group_id.name' => 'ARS_Contact_Attributes_Calculated_Region_District',
+        'label' => E::ts('Southeast: Carolina'),
+        'value' => 'CA',
+        'name' => 'Southeast_Carolina',
+      ],
+      'match' => [
+        'option_group_id',
+        'name',
+        'value',
+      ],
+    ],
+  ],
+  [
+    'name' => 'OptionGroup_ARS_Contact_Attributes_Calculated_Region_District_OptionValue_Southeast_Deep_South',
+    'entity' => 'OptionValue',
+    'cleanup' => 'always',
+    'update' => 'always',
+    'params' => [
+      'version' => 4,
+      'values' => [
+        'option_group_id.name' => 'ARS_Contact_Attributes_Calculated_Region_District',
+        'label' => E::ts('Southeast: Deep South'),
+        'value' => 'DS',
+        'name' => 'Southeast_Deep_South',
+        'description' => E::ts(''),
+      ],
+      'match' => [
+        'option_group_id',
+        'name',
+        'value',
+      ],
+    ],
+  ],
+  [
+    'name' => 'OptionGroup_ARS_Contact_Attributes_Calculated_Region_District_OptionValue_Southeast_Gulf',
+    'entity' => 'OptionValue',
+    'cleanup' => 'always',
+    'update' => 'always',
+    'params' => [
+      'version' => 4,
+      'values' => [
+        'option_group_id.name' => 'ARS_Contact_Attributes_Calculated_Region_District',
+        'label' => E::ts('Southeast: Gulf'),
+        'value' => 'GU',
+        'name' => 'Southeast_Gulf',
+        'description' => E::ts(''),
+      ],
+      'match' => [
+        'option_group_id',
+        'name',
+        'value',
+      ],
+    ],
+  ],
+  [
+    'name' => 'OptionGroup_ARS_Contact_Attributes_Calculated_Region_District_OptionValue_Southeast_Tenarky',
+    'entity' => 'OptionValue',
+    'cleanup' => 'always',
+    'update' => 'always',
+    'params' => [
+      'version' => 4,
+      'values' => [
+        'option_group_id.name' => 'ARS_Contact_Attributes_Calculated_Region_District',
+        'label' => E::ts('Southeast: Tenarky'),
+        'value' => 'TE',
+        'name' => 'Southeast_Tenarky',
+        'description' => E::ts(''),
+      ],
+      'match' => [
+        'option_group_id',
+        'name',
+        'value',
+      ],
+    ],
+  ],
+  [
+    'name' => 'OptionGroup_ARS_Contact_Attributes_Calculated_Region_District_OptionValue_Southwest_South_Central',
+    'entity' => 'OptionValue',
+    'cleanup' => 'always',
+    'update' => 'always',
+    'params' => [
+      'version' => 4,
+      'values' => [
+        'option_group_id.name' => 'ARS_Contact_Attributes_Calculated_Region_District',
+        'label' => E::ts('Southwest: NCNH'),
+        'value' => 'NCNH',
+        'name' => 'Southwest_South_Central',
+        'description' => E::ts(''),
+      ],
+      'match' => [
+        'option_group_id',
+        'name',
+        'value',
+      ],
+    ],
+  ],
+  [
+    'name' => 'OptionGroup_ARS_Contact_Attributes_Calculated_Region_District_OptionValue_Southwest_Pacific_Southwest',
+    'entity' => 'OptionValue',
+    'cleanup' => 'always',
+    'update' => 'always',
+    'params' => [
+      'version' => 4,
+      'values' => [
+        'option_group_id.name' => 'ARS_Contact_Attributes_Calculated_Region_District',
+        'label' => E::ts('Southwest: Pacific Southwest'),
+        'value' => 'PS',
+        'name' => 'Southwest_Pacific_Southwest',
+        'description' => E::ts(''),
+      ],
+      'match' => [
+        'option_group_id',
+        'name',
+        'value',
+      ],
+    ],
+  ],
+  [
+    'name' => 'OptionGroup_ARS_Contact_Attributes_Calculated_Region_District_OptionValue_Southwest_South_Central',
+    'entity' => 'OptionValue',
+    'cleanup' => 'always',
+    'update' => 'always',
+    'params' => [
+      'version' => 4,
+      'values' => [
+        'option_group_id.name' => 'ARS_Contact_Attributes_Calculated_Region_District',
+        'label' => E::ts('Southwest: South Central'),
+        'value' => 'SC',
+        'name' => 'Southwest_South_Central',
+        'description' => E::ts(''),
+      ],
+      'match' => [
+        'option_group_id',
+        'name',
+        'value',
+      ],
+    ],
+  ],
+  [
+    'name' => 'CustomGroup_ARS_Contact_Attributes_Calculated_CustomField_Region_District',
+    'entity' => 'CustomField',
+    'cleanup' => 'always',
+    'update' => 'always',
+    'params' => [
+      'version' => 4,
+      'values' => [
+        'custom_group_id.name' => 'ARS_Contact_Attributes_Calculated_',
+        'name' => 'Region_District',
+        'label' => E::ts('Region: District'),
+        'html_type' => 'Select',
+        'is_searchable' => TRUE,
+        'is_view' => TRUE,
+        'text_length' => 255,
+        'note_columns' => 60,
+        'note_rows' => 4,
+        'column_name' => 'region_district_96',
+        'option_group_id.name' => 'ARS_Contact_Attributes_Calculated_Region_District',
+      ],
+      'match' => [
+        'name',
+        'custom_group_id',
+      ],
+    ],
+  ],
+];

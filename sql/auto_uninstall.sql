@@ -1,0 +1,1 @@
+drop table if exists `civicrm_arsdist_lookup`;
