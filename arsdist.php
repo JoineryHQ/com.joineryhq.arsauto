@@ -32,48 +32,36 @@ function arsdist_civicrm_enable(): void {
 }
 
 function arsdist_civicrm_triggerInfo(&$info, $tableName) {
-  
-//  ALTER TABLE `civicrm_address`
-//ADD INDEX `postal_code` (`postal_code`);
-  
-  $customField = \Civi\Api4\CustomField::get()
-  ->setCheckPermissions(FALSE)
-  ->addWhere('custom_group_id:name', '=', 'ARS_Contact_Attributes_Calculated_')
-  ->addWhere('name', '=', 'Region_District')
-  ->setLimit(1)
-  ->addChain('custom_group', \Civi\Api4\CustomGroup::get()
-    ->setCheckPermissions(FALSE)
-    ->setUseCache(TRUE)
-    ->addWhere('id', '=', '$custom_group_id'),
-  0)
-  ->execute()
-  ->first();
-  $columnName = $customField['column_name'] ?? NULL;
-  $tableName = $customField['custom_group']['table_name'] ?? NULL;
+  $customFieldAttributes = CRM_Arsdist_Utils::getDistCustomFieldAttributes('ARS_Contact_Attributes_Calculated_', 'Region_District');
 
-  if (empty($tableName) || empty($columnName)) {
+  if (empty($customFieldAttributes['tableName']) || empty($customFieldAttributes['columnName'])) {
     // No such custom field found; do nothing and return.
+    echo "no such table/column\n";
     return;
   }
   
   $sourceTable = 'civicrm_address';
 
-  $sql = "
-    REPLACE INTO `$tableName` (entity_id, $columnName)
+  $sqlParams = [
+    '1' => [$customFieldAttributes['tableName'], 'MysqlColumnNameOrAlias'],
+    '2' => [$customFieldAttributes['columnName'], 'MysqlColumnNameOrAlias'],
+    '3' => [$sourceTable, 'MysqlColumnNameOrAlias'],
+  ];
+  $sqlPattern = "
+    REPLACE INTO %1 (entity_id, %2)
     SELECT * FROM (
       SELECT contact_id, district_code
       FROM
-      $sourceTable a 
+      %3 a 
         INNER JOIN civicrm_arsdist_lookup al ON 
           al.state_province_id = a.state_province_id 
           and al.postal_code in ('*', a.postal_code)
       WHERE a.contact_id = NEW.contact_id
         and a.is_primary
-    ) as regionlist
-    GROUP BY contact_id;
+    ) as regionlist;
   ";
-  $sql_field_parts = array();
-
+  $sql = CRM_Core_DAO::composeQuery($sqlPattern, $sqlParams);
+  
   $info[] = array(
       'table' => $sourceTable,
       'when' => 'AFTER',
