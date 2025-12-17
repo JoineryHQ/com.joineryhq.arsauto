@@ -17,7 +17,6 @@ return [
       'api_action' => 'Update',
       'parameters' => 'runInNonProductionEnvironment = 1',
       'is_active' => 1, // HERE?
-      ],
-    'X-Arsdist-Force-Enable-Version' => 1,
+    ],
   ],
 ];
