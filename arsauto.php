@@ -1,16 +1,16 @@
 <?php
 
-require_once 'arsdist.civix.php';
+require_once 'arsauto.civix.php';
 
-use CRM_Arsdist_ExtensionUtil as E;
+use CRM_Arsauto_ExtensionUtil as E;
 
 /**
  * Implements hook_civicrm_config().
  *
  * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_config/
  */
-function arsdist_civicrm_config(&$config): void {
-  _arsdist_civix_civicrm_config($config);
+function arsauto_civicrm_config(&$config): void {
+  _arsauto_civix_civicrm_config($config);
 }
 
 /**
@@ -18,8 +18,8 @@ function arsdist_civicrm_config(&$config): void {
  *
  * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_install
  */
-function arsdist_civicrm_install(): void {
-  _arsdist_civix_civicrm_install();
+function arsauto_civicrm_install(): void {
+  _arsauto_civix_civicrm_install();
 }
 
 /**
@@ -27,12 +27,12 @@ function arsdist_civicrm_install(): void {
  *
  * @link https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_enable
  */
-function arsdist_civicrm_enable(): void {
-  _arsdist_civix_civicrm_enable();
+function arsauto_civicrm_enable(): void {
+  _arsauto_civix_civicrm_enable();
 }
 
-function arsdist_civicrm_triggerInfo(&$info, $tableName) {
-  $customFieldAttributes = CRM_Arsdist_Utils::getDistCustomFieldAttributes('ARS_Contact_Attributes_Calculated_', 'Region_District');
+function arsauto_civicrm_triggerInfo(&$info, $tableName) {
+  $customFieldAttributes = CRM_Arsauto_Utils::getDistCustomFieldAttributes('ARS_Contact_Attributes_Calculated_', 'Region_District');
 
   if (empty($customFieldAttributes['tableName']) || empty($customFieldAttributes['columnName'])) {
     // No such custom field found; do nothing and return.
@@ -52,7 +52,7 @@ function arsdist_civicrm_triggerInfo(&$info, $tableName) {
       SELECT contact_id, district_code
       FROM
       %3 a
-        INNER JOIN civicrm_arsdist_lookup al ON
+        INNER JOIN civicrm_arsauto_lookup al ON
           al.state_province_id = a.state_province_id
           and al.postal_code in ('*', LEFT(a.postal_code, 5))
       WHERE a.contact_id = NEW.contact_id

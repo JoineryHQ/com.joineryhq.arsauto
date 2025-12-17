@@ -1,4 +1,4 @@
-Package: com.joineryhq.arsdist
+Package: com.joineryhq.arsauto
 Copyright (C) 2025, Allen Shaw <allen@JoineryHQ.com>
 Licensed under GNU General Public License v3.0 only (below).
 

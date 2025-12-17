@@ -1,10 +1,10 @@
 <?php
-use CRM_Arsdist_ExtensionUtil as E;
+use CRM_Arsauto_ExtensionUtil as E;
 
 /**
  * Collection of upgrade steps.
  */
-class CRM_Arsdist_Upgrader extends \CRM_Extension_Upgrader_Base {
+class CRM_Arsauto_Upgrader extends \CRM_Extension_Upgrader_Base {
 
   // By convention, functions that look like "function upgrade_NNNN()" are
   // upgrade tasks. They are executed in order (like Drupal's hook_update_N).
@@ -49,17 +49,17 @@ class CRM_Arsdist_Upgrader extends \CRM_Extension_Upgrader_Base {
    * Implements hook_civicrm_enable().
    *
    * On extension enable, force-enable any managed entities with the appropriate
-   * 'X-Arsdist-Force-Enable-Version' value.
+   * 'X-Arsauto-Force-Enable-Version' value.
    */
   public function enable(): void {
     $mgdFiles = CRM_Utils_File::findFiles(E::path(), '*.mgd.php');
     foreach ($mgdFiles as $file) {
       $es = include $file;
       foreach ($es as $e) {
-        $forceEnableVersion = ($e['X-Arsdist-Force-Enable-Version'] ?? 0);
+        $forceEnableVersion = ($e['X-Arsauto-Force-Enable-Version'] ?? 0);
         if ($forceEnableVersion == 1) {
           $entityName = ($e['params']['values']['name'] ?? $e['params']['name']);
-          Civi::log()->info("Arsdist: on extension enable, attempt forced enabling of entity: {$e['entity']}[name: {$entityName}]");
+          Civi::log()->info("Arsauto: on extension enable, attempt forced enabling of entity: {$e['entity']}[name: {$entityName}]");
           $result = civicrm_api4($e['entity'], 'update', [
             'values' => [
               'is_active' => TRUE,

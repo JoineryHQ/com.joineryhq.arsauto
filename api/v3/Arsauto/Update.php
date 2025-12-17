@@ -1,19 +1,19 @@
 <?php
-use CRM_Arsdist_ExtensionUtil as E;
+use CRM_Arsauto_ExtensionUtil as E;
 
 /**
- * Arsdist.Update API specification (optional)
+ * Arsauto.Update API specification (optional)
  * This is used for documentation and validation.
  *
  * @param array $spec description of fields supported by this API call
  *
  * @see https://docs.civicrm.org/dev/en/latest/framework/api-architecture/
  */
-function _civicrm_api3_arsdist_Update_spec(&$spec) {
+function _civicrm_api3_arsauto_Update_spec(&$spec) {
 }
 
 /**
- * Arsdist.Update API
+ * Arsauto.Update API
  *
  * @param array $params
  *
@@ -24,10 +24,10 @@ function _civicrm_api3_arsdist_Update_spec(&$spec) {
  *
  * @throws CRM_Core_Exception
  */
-function civicrm_api3_arsdist_Update($params) {
+function civicrm_api3_arsauto_Update($params) {
   $limit = 5000;
 
-  $customFieldAttributes = CRM_Arsdist_Utils::getDistCustomFieldAttributes('ARS_Contact_Attributes_Calculated_', 'Region_District');
+  $customFieldAttributes = CRM_Arsauto_Utils::getDistCustomFieldAttributes('ARS_Contact_Attributes_Calculated_', 'Region_District');
 
   $sqlParams = [
     '1' => [$customFieldAttributes['tableName'], 'MysqlColumnNameOrAlias'],
@@ -54,7 +54,7 @@ function civicrm_api3_arsdist_Update($params) {
       civicrm_address a
         INNER JOIN tmp_valid_contact t ON
           t.id = a.contact_id
-        LEFT JOIN civicrm_arsdist_lookup al ON
+        LEFT JOIN civicrm_arsauto_lookup al ON
           al.state_province_id = a.state_province_id
           and al.postal_code in ('*', LEFT(a.postal_code, 5))
       WHERE a.is_primary
@@ -64,5 +64,5 @@ function civicrm_api3_arsdist_Update($params) {
   $affectedRows = $dao->affectedRows();
 
   $returnValues = ['Row count' => $affectedRows];
-  return civicrm_api3_create_success($returnValues, $params, 'Arsdist', 'Update');
+  return civicrm_api3_create_success($returnValues, $params, 'Arsauto', 'Update');
 }

@@ -6,11 +6,11 @@ use Civi\Test\HookInterface;
 use Civi\Test\TransactionalInterface;
 
 /**
- * Arsdist.Update API Test Case
+ * Arsauto.Update API Test Case
  * This is a generic test class implemented with PHPUnit.
  * @group headless
  */
-class api_v3_Arsdist_UpdateTest extends \PHPUnit\Framework\TestCase implements HeadlessInterface, HookInterface, TransactionalInterface {
+class api_v3_Arsauto_UpdateTest extends \PHPUnit\Framework\TestCase implements HeadlessInterface, HookInterface, TransactionalInterface {
   use \Civi\Test\Api3TestTrait;
 
   /**
@@ -47,7 +47,7 @@ class api_v3_Arsdist_UpdateTest extends \PHPUnit\Framework\TestCase implements H
    * Note how the function name begins with the word "test".
    */
   public function testApiExample() {
-    $result = civicrm_api3('Arsdist', 'update', array('magicword' => 'sesame'));
+    $result = civicrm_api3('Arsauto', 'update', array('magicword' => 'sesame'));
     $this->assertEquals('Twelve', $result['values'][12]['name']);
   }
 

@@ -1,5 +1,5 @@
 <?php
-use CRM_Arsdist_ExtensionUtil as E;
+use CRM_Arsauto_ExtensionUtil as E;
 
 return [
   [
@@ -19,7 +19,7 @@ return [
       ],
       'match' => ['name'],
     ],
-    'X-Arsdist-Force-Enable-Version' => 1,
+    'X-Arsauto-Force-Enable-Version' => 1,
   ],
   [
     'name' => 'OptionGroup_ARS_Contact_Attributes_Calculated_Region_District',
@@ -37,7 +37,7 @@ return [
       ],
       'match' => ['name'],
     ],
-    'X-Arsdist-Force-Enable-Version' => 1,
+    'X-Arsauto-Force-Enable-Version' => 1,
   ],
   [
     'name' => 'OptionGroup_ARS_Contact_Attributes_Calculated_Region_District_OptionValue_Northeast_Buckeye',
@@ -58,7 +58,7 @@ return [
         'value',
       ],
     ],
-    'X-Arsdist-Force-Enable-Version' => 1,
+    'X-Arsauto-Force-Enable-Version' => 1,
   ],
   [
     'name' => 'OptionGroup_ARS_Contact_Attributes_Calculated_Region_District_OptionValue_Northeast_Great_Lakes',
@@ -79,7 +79,7 @@ return [
         'value',
       ],
     ],
-    'X-Arsdist-Force-Enable-Version' => 1,
+    'X-Arsauto-Force-Enable-Version' => 1,
   ],
   [
     'name' => 'OptionGroup_ARS_Contact_Attributes_Calculated_Region_District_OptionValue_Northeast_Illinois_indiana',
@@ -100,7 +100,7 @@ return [
         'value',
       ],
     ],
-    'X-Arsdist-Force-Enable-Version' => 1,
+    'X-Arsauto-Force-Enable-Version' => 1,
   ],
   [
     'name' => 'OptionGroup_ARS_Contact_Attributes_Calculated_Region_District_OptionValue_Northeast_New_York',
@@ -121,7 +121,7 @@ return [
         'value',
       ],
     ],
-    'X-Arsdist-Force-Enable-Version' => 1,
+    'X-Arsauto-Force-Enable-Version' => 1,
   ],
   [
     'name' => 'OptionGroup_ARS_Contact_Attributes_Calculated_Region_District_OptionValue_Northeast_North_Central',
@@ -142,7 +142,7 @@ return [
         'value',
       ],
     ],
-    'X-Arsdist-Force-Enable-Version' => 1,
+    'X-Arsauto-Force-Enable-Version' => 1,
   ],
   [
     'name' => 'OptionGroup_ARS_Contact_Attributes_Calculated_Region_District_OptionValue_Northeast_Penn_jersey',
@@ -163,7 +163,7 @@ return [
         'value',
       ],
     ],
-    'X-Arsdist-Force-Enable-Version' => 1,
+    'X-Arsauto-Force-Enable-Version' => 1,
   ],
   [
     'name' => 'OptionGroup_ARS_Contact_Attributes_Calculated_Region_District_OptionValue_Northeast_Yankee',
@@ -184,7 +184,7 @@ return [
         'value',
       ],
     ],
-    'X-Arsdist-Force-Enable-Version' => 1,
+    'X-Arsauto-Force-Enable-Version' => 1,
   ],
   [
     'name' => 'OptionGroup_ARS_Contact_Attributes_Calculated_Region_District_OptionValue_Northwest_Central',
@@ -205,7 +205,7 @@ return [
         'value',
       ],
     ],
-    'X-Arsdist-Force-Enable-Version' => 1,
+    'X-Arsauto-Force-Enable-Version' => 1,
   ],
   [
     'name' => 'OptionGroup_ARS_Contact_Attributes_Calculated_Region_District_OptionValue_Northwest_Pacific_Northwest',
@@ -226,7 +226,7 @@ return [
         'value',
       ],
     ],
-    'X-Arsdist-Force-Enable-Version' => 1,
+    'X-Arsauto-Force-Enable-Version' => 1,
   ],
   [
     'name' => 'OptionGroup_ARS_Contact_Attributes_Calculated_Region_District_OptionValue_Northwest_Rocky_Mountain',
@@ -247,7 +247,7 @@ return [
         'value',
       ],
     ],
-    'X-Arsdist-Force-Enable-Version' => 1,
+    'X-Arsauto-Force-Enable-Version' => 1,
   ],
   [
     'name' => 'OptionGroup_ARS_Contact_Attributes_Calculated_Region_District_OptionValue_Southeast_Carolina',
@@ -268,7 +268,7 @@ return [
         'value',
       ],
     ],
-    'X-Arsdist-Force-Enable-Version' => 1,
+    'X-Arsauto-Force-Enable-Version' => 1,
   ],
   [
     'name' => 'OptionGroup_ARS_Contact_Attributes_Calculated_Region_District_OptionValue_Southeast_Deep_South',
@@ -290,7 +290,7 @@ return [
         'value',
       ],
     ],
-    'X-Arsdist-Force-Enable-Version' => 1,
+    'X-Arsauto-Force-Enable-Version' => 1,
   ],
   [
     'name' => 'OptionGroup_ARS_Contact_Attributes_Calculated_Region_District_OptionValue_Southeast_Gulf',
@@ -312,7 +312,7 @@ return [
         'value',
       ],
     ],
-    'X-Arsdist-Force-Enable-Version' => 1,
+    'X-Arsauto-Force-Enable-Version' => 1,
   ],
   [
     'name' => 'OptionGroup_ARS_Contact_Attributes_Calculated_Region_District_OptionValue_Southeast_Tenarky',
@@ -334,7 +334,7 @@ return [
         'value',
       ],
     ],
-    'X-Arsdist-Force-Enable-Version' => 1,
+    'X-Arsauto-Force-Enable-Version' => 1,
   ],
   [
     'name' => 'OptionGroup_ARS_Contact_Attributes_Calculated_Region_District_OptionValue_Southwest_South_Central',
@@ -356,7 +356,7 @@ return [
         'value',
       ],
     ],
-    'X-Arsdist-Force-Enable-Version' => 1,
+    'X-Arsauto-Force-Enable-Version' => 1,
   ],
   [
     'name' => 'OptionGroup_ARS_Contact_Attributes_Calculated_Region_District_OptionValue_Southwest_Pacific_Southwest',
@@ -378,7 +378,7 @@ return [
         'value',
       ],
     ],
-    'X-Arsdist-Force-Enable-Version' => 1,
+    'X-Arsauto-Force-Enable-Version' => 1,
   ],
   [
     'name' => 'OptionGroup_ARS_Contact_Attributes_Calculated_Region_District_OptionValue_Southwest_South_Central',
@@ -400,7 +400,7 @@ return [
         'value',
       ],
     ],
-    'X-Arsdist-Force-Enable-Version' => 1,
+    'X-Arsauto-Force-Enable-Version' => 1,
   ],
   [
     'name' => 'CustomGroup_ARS_Contact_Attributes_Calculated_CustomField_Region_District',
@@ -427,6 +427,6 @@ return [
         'custom_group_id',
       ],
     ],
-    'X-Arsdist-Force-Enable-Version' => 1,
+    'X-Arsauto-Force-Enable-Version' => 1,
   ],
 ];

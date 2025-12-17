@@ -6,14 +6,14 @@
 // https://docs.civicrm.org/dev/en/latest/hooks/hook_civicrm_managed
 return [
   [
-    'name' => 'Cron:Arsdist.Update',
+    'name' => 'Cron:Arsauto.Update',
     'entity' => 'Job',
     'params' => [
       'version' => 3,
-      'name' => 'Call Arsdist.Update API',
-      'description' => 'Call Arsdist.Update API',
+      'name' => 'Call Arsauto.Update API',
+      'description' => 'Call Arsauto.Update API',
       'run_frequency' => 'Always',
-      'api_entity' => 'Arsdist',
+      'api_entity' => 'Arsauto',
       'api_action' => 'Update',
       'parameters' => 'runInNonProductionEnvironment = 1',
     ],

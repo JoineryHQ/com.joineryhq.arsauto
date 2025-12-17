@@ -1,1 +1,1 @@
-drop table if exists `civicrm_arsdist_lookup`;
+drop table if exists `civicrm_arsauto_lookup`;

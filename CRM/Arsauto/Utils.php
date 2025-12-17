@@ -1,7 +1,7 @@
 <?php
-use CRM_Arsdist_ExtensionUtil as E;
+use CRM_Arsauto_ExtensionUtil as E;
 
-class CRM_Arsdist_Utils {
+class CRM_Arsauto_Utils {
 
   /**
    * For a given custom-group/custom-field pairing (by name), get the actual

@@ -1,4 +1,4 @@
-CREATE TABLE `civicrm_arsdist_lookup` (
+CREATE TABLE `civicrm_arsauto_lookup` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `state_province_id` int(10) unsigned NOT NULL,
   `postal_code` varchar(64) NOT NULL,
@@ -6,10 +6,10 @@ CREATE TABLE `civicrm_arsdist_lookup` (
   PRIMARY KEY (`id`),
   KEY `state_province_id` (`state_province_id`),
   KEY `postal_code` (`postal_code`),
-  CONSTRAINT `civicrm_arsdist_lookup_ibfk_1` FOREIGN KEY (`state_province_id`) REFERENCES `civicrm_state_province` (`id`) ON DELETE CASCADE
+  CONSTRAINT `civicrm_arsauto_lookup_ibfk_1` FOREIGN KEY (`state_province_id`) REFERENCES `civicrm_state_province` (`id`) ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
-INSERT INTO civicrm_arsdist_lookup (state_province_id, postal_code, district_code) VALUES
+INSERT INTO civicrm_arsauto_lookup (state_province_id, postal_code, district_code) VALUES
 ('1034', '43001', 'BU'),
 ('1034', '43002', 'BU'),
 ('1034', '43003', 'BU'),
