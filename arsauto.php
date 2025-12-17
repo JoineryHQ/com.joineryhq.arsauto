@@ -52,7 +52,7 @@ function arsauto_civicrm_triggerInfo(&$info, $tableName) {
       SELECT contact_id, district_code
       FROM
       %3 a
-        INNER JOIN civicrm_arsauto_lookup al ON
+        LEFT JOIN civicrm_arsauto_lookup al ON
           al.state_province_id = a.state_province_id
           and al.postal_code in ('*', LEFT(a.postal_code, 5))
       WHERE a.contact_id = NEW.contact_id
