@@ -36,7 +36,6 @@ function arsdist_civicrm_triggerInfo(&$info, $tableName) {
 
   if (empty($customFieldAttributes['tableName']) || empty($customFieldAttributes['columnName'])) {
     // No such custom field found; do nothing and return.
-    echo "no such table/column\n";
     return;
   }
   
@@ -55,7 +54,7 @@ function arsdist_civicrm_triggerInfo(&$info, $tableName) {
       %3 a 
         INNER JOIN civicrm_arsdist_lookup al ON 
           al.state_province_id = a.state_province_id 
-          and al.postal_code in ('*', a.postal_code)
+          and al.postal_code in ('*', LEFT(a.postal_code, 5))
       WHERE a.contact_id = NEW.contact_id
         and a.is_primary
     ) as regionlist;

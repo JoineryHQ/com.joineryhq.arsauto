@@ -35,7 +35,7 @@ class CRM_Arsdist_Upgrader extends \CRM_Extension_Upgrader_Base {
   //    'myWeirdFieldSetting' => array('id' => $customFieldId, 'weirdness' => 1),
   //  ));
   // }
-
+    
   /**
    * Example: Run an external SQL script when the module is uninstalled.
    *
@@ -46,11 +46,33 @@ class CRM_Arsdist_Upgrader extends \CRM_Extension_Upgrader_Base {
   // }
 
   /**
-   * Example: Run a simple query when a module is enabled.
+   * Implements hook_civicrm_enable.
+   * 
+   * On extension enable, force-enable any managed entities with the appropriate 
+   * 'X-Arsdist-Force-Enable-Version' value.
    */
-  // public function enable(): void {
-  //  CRM_Core_DAO::executeQuery('UPDATE foo SET is_active = 1 WHERE bar = "whiz"');
-  // }
+  public function enable(): void {
+    $mgdFiles = CRM_Utils_File::findFiles(E::path(), '*.mgd.php');
+    foreach ($mgdFiles as $file) {
+      $es = include $file;
+      foreach ($es as $e) {
+        $forceEnableVersion = ($e['X-Arsdist-Force-Enable-Version'] ?? 0);
+        if ($forceEnableVersion == 1) {
+          $entityName = ($e['params']['values']['name'] ?? $e['params']['name']);
+          Civi::log()->info("Arsdist: on extension enable, attempt forced enabling of entity: {$e['entity']}[name: {$entityName}]");
+          $result = civicrm_api4($e['entity'], 'update', [
+            'values' => [
+              'is_active' => TRUE,
+            ],
+            'where' => [
+              ['name', '=', $entityName],
+            ],
+            'checkPermissions' => false,
+          ]);
+        }
+      }
+    }
+  }
 
   /**
    * Example: Run a simple query when a module is disabled.
