@@ -25,7 +25,7 @@ function _civicrm_api3_arsdist_Update_spec(&$spec) {
  * @throws CRM_Core_Exception
  */
 function civicrm_api3_arsdist_Update($params) {
-  $limit = 1000;
+  $limit = 5000;
   
   $customFieldAttributes = CRM_Arsdist_Utils::getDistCustomFieldAttributes('ARS_Contact_Attributes_Calculated_', 'Region_District');
 
