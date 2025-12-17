@@ -26,7 +26,7 @@ function _civicrm_api3_arsdist_Update_spec(&$spec) {
  */
 function civicrm_api3_arsdist_Update($params) {
   $limit = 5000;
-  
+
   $customFieldAttributes = CRM_Arsdist_Utils::getDistCustomFieldAttributes('ARS_Contact_Attributes_Calculated_', 'Region_District');
 
   $sqlParams = [
@@ -46,23 +46,23 @@ function civicrm_api3_arsdist_Update($params) {
     LIMIT %3
   ";
   CRM_Core_DAO::executeQuery($sqlPattern, $sqlParams);
-  
+
   $sqlPattern = "
     INSERT INTO %1 (entity_id, %2)
       SELECT contact_id, district_code
       FROM
-      civicrm_address a 
-        INNER JOIN tmp_valid_contact t ON 
+      civicrm_address a
+        INNER JOIN tmp_valid_contact t ON
           t.id = a.contact_id
-        LEFT JOIN civicrm_arsdist_lookup al ON 
-          al.state_province_id = a.state_province_id 
+        LEFT JOIN civicrm_arsdist_lookup al ON
+          al.state_province_id = a.state_province_id
           and al.postal_code in ('*', LEFT(a.postal_code, 5))
       WHERE a.is_primary
       GROUP BY a.contact_id
   ";
   $dao = CRM_Core_DAO::executeQuery($sqlPattern, $sqlParams);
   $affectedRows = $dao->affectedRows();
+
   $returnValues = ['Row count' => $affectedRows];
   return civicrm_api3_create_success($returnValues, $params, 'Arsdist', 'Update');
-  
 }

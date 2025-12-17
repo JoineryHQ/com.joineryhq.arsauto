@@ -16,7 +16,6 @@ return [
       'api_entity' => 'Arsdist',
       'api_action' => 'Update',
       'parameters' => 'runInNonProductionEnvironment = 1',
-      'is_active' => 1, // HERE?
     ],
   ],
 ];

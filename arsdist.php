@@ -38,7 +38,7 @@ function arsdist_civicrm_triggerInfo(&$info, $tableName) {
     // No such custom field found; do nothing and return.
     return;
   }
-  
+
   $sourceTable = 'civicrm_address';
 
   $sqlParams = [
@@ -51,34 +51,34 @@ function arsdist_civicrm_triggerInfo(&$info, $tableName) {
     SELECT * FROM (
       SELECT contact_id, district_code
       FROM
-      %3 a 
-        INNER JOIN civicrm_arsdist_lookup al ON 
-          al.state_province_id = a.state_province_id 
+      %3 a
+        INNER JOIN civicrm_arsdist_lookup al ON
+          al.state_province_id = a.state_province_id
           and al.postal_code in ('*', LEFT(a.postal_code, 5))
       WHERE a.contact_id = NEW.contact_id
         and a.is_primary
     ) as regionlist;
   ";
   $sql = CRM_Core_DAO::composeQuery($sqlPattern, $sqlParams);
-  
+
   $info[] = array(
-      'table' => $sourceTable,
-      'when' => 'AFTER',
-      'event' => 'INSERT',
-      'sql' => $sql,
+    'table' => $sourceTable,
+    'when' => 'AFTER',
+    'event' => 'INSERT',
+    'sql' => $sql,
   );
   $info[] = array(
-      'table' => $sourceTable,
-      'when' => 'AFTER',
-      'event' => 'UPDATE',
-      'sql' => $sql,
+    'table' => $sourceTable,
+    'when' => 'AFTER',
+    'event' => 'UPDATE',
+    'sql' => $sql,
   );
   // For delete, we reference OLD.contact_id instead of NEW.contact_id
   $sql = str_replace('NEW.contact_id', 'OLD.contact_id', $sql);
   $info[] = array(
-      'table' => $sourceTable,
-      'when' => 'AFTER',
-      'event' => 'DELETE',
-      'sql' => $sql,
+    'table' => $sourceTable,
+    'when' => 'AFTER',
+    'event' => 'DELETE',
+    'sql' => $sql,
   );
 }

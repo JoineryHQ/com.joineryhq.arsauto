@@ -35,7 +35,7 @@ class CRM_Arsdist_Upgrader extends \CRM_Extension_Upgrader_Base {
   //    'myWeirdFieldSetting' => array('id' => $customFieldId, 'weirdness' => 1),
   //  ));
   // }
-    
+
   /**
    * Example: Run an external SQL script when the module is uninstalled.
    *
@@ -46,9 +46,9 @@ class CRM_Arsdist_Upgrader extends \CRM_Extension_Upgrader_Base {
   // }
 
   /**
-   * Implements hook_civicrm_enable.
-   * 
-   * On extension enable, force-enable any managed entities with the appropriate 
+   * Implements hook_civicrm_enable().
+   *
+   * On extension enable, force-enable any managed entities with the appropriate
    * 'X-Arsdist-Force-Enable-Version' value.
    */
   public function enable(): void {
@@ -67,7 +67,7 @@ class CRM_Arsdist_Upgrader extends \CRM_Extension_Upgrader_Base {
             'where' => [
               ['name', '=', $entityName],
             ],
-            'checkPermissions' => false,
+            'checkPermissions' => FALSE,
           ]);
         }
       }
