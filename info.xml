@@ -1,8 +1,8 @@
 <?xml version="1.0"?>
 <extension key="com.joineryhq.arsauto" type="module">
   <file>arsauto</file>
-  <name>com.joineryhq.arsauto</name>
-  <description>FIXME</description>
+  <name>ARS auto</name>
+  <description>Performs automatic calculation of certain data points for ARS.</description>
   <license>GPL-3.0</license>
   <authors>
     <author>
@@ -12,18 +12,18 @@
     </author>
   </authors>
   <urls>
-    <url desc="Main Extension Page">https://FIXME</url>
-    <url desc="Documentation">https://FIXME</url>
-    <url desc="Support">https://FIXME</url>
+    <url desc="Main Extension Page">https://github.com/JoineryHQ/com.joineryhq.arsauto</url>
+    <url desc="Documentation">https://github.com/JoineryHQ/com.joineryhq.arsauto/blob/master/README.md</url>
+    <url desc="Support">https://github.com/JoineryHQ/com.joineryhq.arsauto/issues</url>
     <url desc="Licensing">https://www.gnu.org/licenses/gpl-3.0.html</url>
   </urls>
   <releaseDate>2025-12-13</releaseDate>
   <version>1.0.0</version>
-  <develStage>alpha</develStage>
+  <develStage>beta</develStage>
   <compatibility>
     <ver>6.2</ver>
   </compatibility>
-  <comments>This is a new, undeveloped module</comments>
+  <comments>Provides several managed entities which are forced to be enabled whenever this extension is enabled; see Documentation.</comments>
   <classloader>
     <psr0 prefix="CRM_" path="."/>
     <psr4 prefix="Civi\" path="Civi"/>
